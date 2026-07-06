@@ -1,0 +1,82 @@
+@use 'foundation' as *;
+
+html {
+ //  scroll-padding-top: rem(60);
+ scrollbar-color: var(--color-600) var(--color-300);
+ scrollbar-width: thin; /* Може бути auto, thin або none */
+}
+
+body {
+ position: relative;
+ overflow-x: clip;
+ min-height: 100%;
+ margin: 0;
+ padding: 0;
+ font-family: var(--font-family);
+ font-size: var(--text-base);
+ font-weight: 400;
+ line-height: 1.5;
+ color: var(--color-900);
+ background-color: var(--color-100);
+ border: 0;
+
+ /*  &.menu-active {  
+  overflow-y: hidden;
+  padding-right: rem(7);
+
+  @include m {
+   padding-right: rem(4);
+  }
+ } */
+}
+
+:focus-visible {
+ outline: 2px solid var(--color-accent);
+ outline-offset: 2px;
+
+ //  transition-duration: 0s !important;
+}
+
+.visually-hidden {
+ position: absolute !important;
+ overflow: hidden !important;
+ clip-path: inset(50%) !important;
+ width: 1px !important;
+ height: 1px !important;
+ margin: 1px !important;
+ padding: 0 !important;
+ white-space: nowrap !important;
+ border: 0 !important;
+
+ // prettier-ignore
+ clip: rect(0 0 0 0)!important; /* stylelint-disable-line property-no-deprecated */
+}
+
+/* Загальний стиль для всіх веб-кіт браузерів */
+::-webkit-scrollbar {
+ width: rem(7);
+ height: rem(4); /* Ширина смужки прокрутки */
+
+ @include mobile {
+  width: rem(4);
+ }
+}
+
+::-webkit-scrollbar-track {
+ background: var(--background-second); /* Колір треку */
+}
+
+::-webkit-scrollbar-thumb {
+ background-color: var(--main-color); /* Колір смужки прокрутки */
+ border: none; /* Простір між смужкою і треком  */
+ border-radius: rem(10); /* Округлені краї смужки прокрутки */
+}
+
+// ::-webkit-scrollbar-thumb:hover {
+// 	background-color: var(--brand-color);background-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-colorbackground-color /* Колір смужки при наведенні */
+// }
+
+/* 
+запобігти скачку контента при появі полоси прокрутки
+.body { padding: 0 calc(rem(20) - (100vw - 100%)) 0 0; }
+*/
