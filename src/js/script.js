@@ -1,3 +1,3 @@
-import { initWorkout } from './components/workouTracker.js'
+import { initWorkout } from './components/workoutTracker.js'
 
 initWorkout()
