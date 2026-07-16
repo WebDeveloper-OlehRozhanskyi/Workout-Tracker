@@ -24,6 +24,7 @@
  // .workout__details
  &__details {
   summary {
+   width: max-content;
    margin-bottom: var(--gap-md);
    font-weight: 700;
    transition: color var(--transition);
@@ -52,6 +53,7 @@
   row-gap: var(--gap-sm);
   padding: var(--gap-md);
   text-align: left;
+  background-color: var(--color-white);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 
@@ -129,6 +131,7 @@
   row-gap: var(--gap-sm);
   margin-bottom: var(--gap-md);
   padding: var(--gap-md);
+  background-color: var(--color-white);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
  }
@@ -139,6 +142,13 @@
   flex-direction: column;
   row-gap: var(--gap-sm);
   padding: var(--gap-sm);
+  border-radius: var(--radius);
+  transition: background-color var(--transition);
+  cursor: pointer;
+
+  @include hover {
+   background-color: var(--color-100);
+  }
  }
 
  // .workout__exercises-row
