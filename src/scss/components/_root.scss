@@ -2,19 +2,20 @@
 @use 'variables' as *;
 
 :root {
- --color-900: #1a1a2e; 
- --color-600: #6b7280; 
- --color-300: #d1d5db; 
- --color-100: #f3f4f6; 
+ --color-900: #1a1a2e;
+ --color-600: #6b7280;
+ --color-300: #d1d5db;
+ --color-100: #f3f4f6;
  --color-white: #fff;
- --color-accent: #3b82f6; 
- --color-accent-dark: #2563eb; 
- --color-danger: #ef4444; 
- --color-success: #22c55e; 
+ --color-accent: #3b82f6;
+ --color-accent-dark: #2563eb;
+ --color-danger: #ef4444;
+ --color-success: #22c55e;
  --font-family: 'Arial', sans-serif;
+ --text-xl: #{rem(32)};
  --text-lg: #{rem(24)};
- --text-base: #{rem(16)}; // весь основний текст
- --text-sm: #{rem(14)}; 
+ --text-base: #{rem(16)};
+ --text-sm: #{rem(14)};
  --padding-inline: #{rem(32)};
  --gap-xs: #{rem(4)};
  --gap-sm: #{rem(8)};

@@ -88,7 +88,7 @@
  @content;
 }
 
-@mixin hover {
+@mixin hover-line {
  &::before {
   position: absolute;
   bottom: 0;
@@ -104,6 +104,14 @@
  &:hover::before {
   @media (any-hover: hover) {
    transform: translateX(-50%) scale(1);
+  }
+ }
+}
+
+@mixin hover {
+ @media (hover: hover) and (pointer: fine) {
+  &:hover {
+   @content;
   }
  }
 }

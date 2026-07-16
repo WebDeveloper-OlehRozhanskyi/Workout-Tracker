@@ -1,17 +1,18 @@
-# ToDo List
+# Workout Tracker
 
-A simple task manager built with vanilla JavaScript. My first independent project while learning front-end development.
+A workout tracker for resistance band and weighted vest training. Built with vanilla JavaScript — my second independent project while learning front-end development.
 
-**[Live Demo](https://webdeveloper-olehrozhanskyi.github.io/ToDoList/)**
+**[Live Demo](https://webdeveloper-olehrozhanskyi.github.io/WorkoutTracker/)**
 
-![ToDo List screenshot](./ToDoList.png)
+![Workout Tracker screenshot](./screenshot.png)
 
 ## Features
 
-- Add tasks with priority selection (low / high)
-- Mark tasks as done (click to toggle)
-- Delete tasks
-- Active tasks counter
+- Add exercises with reps, load and personal notes
+- Mark exercises as done (click to toggle)
+- Delete exercises
+- Progress counter (done / total)
+- Collapsible equipment reference table
 - Empty state message
 
 ## Tech Stack

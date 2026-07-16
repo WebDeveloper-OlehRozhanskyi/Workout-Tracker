@@ -1,1 +1,244 @@
 @use 'foundation' as *;
+
+.main {
+ padding-block: var(--gap-xl);
+}
+
+.workout {
+ // .workout__container
+ &__container {
+  @include container;
+
+  row-gap: var(--gap-md);
+ }
+
+ // .workout__title
+ &__title {
+  @include margin-block;
+
+  margin-bottom: var(--gap-md);
+  font-size: var(--text-xl);
+  font-weight: 700;
+ }
+
+ // .workout__details
+ &__details {
+  summary {
+   margin-bottom: var(--gap-md);
+   font-weight: 700;
+   transition: color var(--transition);
+   cursor: pointer;
+
+   &::marker {
+    color: var(--color-accent);
+   }
+
+   @include hover {
+    &::marker {
+     color: var(--color-accent-dark);
+    }
+   }
+  }
+
+  &[open] {
+   margin-bottom: var(--gap-xl);
+  }
+ }
+
+ // .workout__equipment
+ &__equipment {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--gap-sm);
+  padding: var(--gap-md);
+  text-align: left;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+
+  thead {
+   font-weight: 700;
+   border-bottom: 2px solid var(--color-300);
+  }
+
+  tr {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   column-gap: var(--gap-sm);
+   padding: var(--gap-xs);
+   border-bottom: 1px solid var(--color-300);
+
+   &:not(:last-child) {
+    margin-bottom: var(--gap-sm);
+   }
+  }
+ }
+
+ // .workout__form
+ &__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-md);
+  margin-bottom: var(--gap-xl);
+ }
+
+ &__label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+  font-size: var(--text-sm);
+  color: var(--color-600);
+ }
+
+ &__input {
+  min-height: rem(40);
+  padding: var(--gap-sm);
+  font-family: inherit;
+  font-size: var(--text-base);
+  color: var(--color-900);
+  border: 1px solid var(--color-300);
+  border-radius: var(--radius);
+  transition: border-color var(--transition);
+
+  &:focus {
+   border-color: var(--color-accent);
+  }
+ }
+
+ &__button {
+  @include button;
+
+  min-height: rem(40);
+  padding: var(--gap-sm) var(--gap-md);
+  color: var(--color-white);
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: var(--radius);
+  transition: background-color var(--transition);
+
+  @include hover {
+   background-color: var(--color-accent-dark);
+  }
+ }
+
+ // .workout__exercises-list
+ &__exercises-list {
+  @include list;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--gap-sm);
+  margin-bottom: var(--gap-md);
+  padding: var(--gap-md);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+ }
+
+ // .workout__exercises-item
+ &__exercises-item {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--gap-sm);
+  padding: var(--gap-sm);
+ }
+
+ // .workout__exercises-row
+ &__exercises-row {
+  @include margin-block;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: var(--gap-xs);
+  border-bottom: 1px solid var(--color-300);
+
+  &--note {
+   font-size: var(--text-sm);
+   color: var(--color-600);
+  }
+ }
+
+ // .workout__exercises-wrap-title
+ &__exercises-wrap-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--gap-xs);
+  border-bottom: 2px solid var(--color-300);
+ }
+
+ // .workout__exercises-title
+ &__exercises-title {
+  @include margin-block;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  font-size: var(--text-base);
+  font-weight: 700;
+
+  &::before {
+   position: absolute;
+   left: 0;
+   color: var(--color-success);
+   transform: scale(0);
+   content: '\2713';
+  }
+ }
+
+ // .workout__exercises-delete
+ &__exercises-delete {
+  @include button;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--gap-sm);
+  line-height: 0;
+  color: var(--color-600);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &::before {
+   transition: var(--transition);
+   content: '\00D7';
+  }
+
+  @include hover {
+   color: var(--color-danger);
+  }
+
+  &:active {
+   color: var(--color-danger);
+  }
+ }
+
+ // .workout__exercises-empty-text
+ &__exercises-empty-text {
+  @include margin-block;
+
+  font-size: var(--text-sm);
+  text-align: center;
+  color: var(--color-600);
+ }
+
+ &__summary {
+  @include margin-block;
+
+  font-size: var(--text-sm);
+  color: var(--color-600);
+ }
+
+ // .workout__exercises-item--done
+ &__exercises-item--done {
+  color: var(--color-600);
+
+  .workout__exercises-title {
+   padding-left: var(--gap-lg);
+
+   &::before {
+    transform: scale(1);
+   }
+  }
+ }
+}

@@ -23,7 +23,7 @@
    <section class="workout">
     <div class="workout__container">
      <h1 class="workout__title">Workout Tracker</h1>
-     <details class="workout__equipment-toggle">
+     <details class="workout__details">
       <summary>Обладнання</summary>
       <table class="workout__equipment">
        <thead>
@@ -68,7 +68,43 @@
        </tbody>
       </table>
      </details>
-     <form action="#" class="workout__form"></form>
+     <details class="workout__details">
+      <summary>Додати вправу</summary>
+      <form class="workout__form">
+       <label class="workout__label">
+        Назва вправи:
+        <input
+         class="workout__input"
+         type="text"
+         name="exercise-name"
+         required />
+       </label>
+       <label class="workout__label">
+        Повтори:
+        <input
+         class="workout__input"
+         type="number"
+         name="exercise-reps"
+         min="1"
+         step="1"
+         required />
+       </label>
+
+       <label class="workout__label">
+        Навантаження:
+        <input
+         class="workout__input"
+         type="text"
+         name="exercise-load"
+         required />
+       </label>
+       <label class="workout__label">
+        Коментар:
+        <input class="workout__input" type="text" name="exercise-note" />
+       </label>
+       <button class="workout__button" type="submit">Додати</button>
+      </form>
+     </details>
      <ul class="workout__exercises-list"></ul>
      <p class="workout__summary"></p>
     </div>
