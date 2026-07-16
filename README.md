@@ -2,7 +2,7 @@
 
 A workout tracker for resistance band and weighted vest training. Built with vanilla JavaScript — my second independent project while learning front-end development.
 
-**[Live Demo](https://webdeveloper-olehrozhanskyi.github.io/WorkoutTracker/)**
+**[Live Demo](https://webdeveloper-olehrozhanskyi.github.io/Workout-Tracker/)**
 
 ![Workout Tracker screenshot](./screenshot.png)
 
