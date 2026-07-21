@@ -12,12 +12,14 @@ A workout tracker for resistance band and weighted vest training. Built with van
 - Mark exercises as done (click to toggle)
 - Delete exercises
 - Progress counter (done / total)
+- Data persists between sessions via localStorage
 - Collapsible equipment reference table
 - Empty state message
 
 ## Tech Stack
 
 - Vanilla JavaScript (ES modules)
+- Web Storage API (localStorage)
 - Vite 7
 - SCSS + BEM methodology
 - GitHub Actions (automated deployment to GitHub Pages)

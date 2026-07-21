@@ -1,6 +1,11 @@
-import { workouts } from '../data/workout.js'
-
 export function initWorkout() {
+ let saved
+ try {
+  saved = JSON.parse(localStorage.getItem('workouts'))
+ } catch {
+  saved = null // зіпсовано → починаємо чисто
+ }
+ const workouts = saved || []
  const exercisesList = document.querySelector('.workout__exercises-list')
  const workoutForm = document.querySelector('.workout__form')
  const summary = document.querySelector('.workout__summary')
@@ -74,6 +79,10 @@ export function initWorkout() {
   summary.textContent = `Виконано: ${doneExercises.length} / ${totalExercises}`
  }
 
+ function saveWorkouts() {
+  localStorage.setItem('workouts', JSON.stringify(workouts))
+ }
+
  workoutForm.addEventListener('submit', event => {
   event.preventDefault()
 
@@ -104,6 +113,7 @@ export function initWorkout() {
    done: false,
   })
 
+  saveWorkouts()
   renderWorkouts(workouts)
 
   workoutForm.reset()
@@ -122,6 +132,7 @@ export function initWorkout() {
    workouts[index].done = !workouts[index].done
   }
 
+  saveWorkouts()
   renderWorkouts(workouts)
  })
 
