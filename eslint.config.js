@@ -12,7 +12,6 @@ export default [
   ],
  },
 
- // Основні правила для JS/TS файлів (додаси TS за потреби)
  {
   files: ['**/*.{js,mjs,cjs}'],
   languageOptions: {
@@ -27,36 +26,6 @@ export default [
   },
  },
 
- // Має бути останнім: вимикає правила, що конфліктують із Prettier
+ // Must be last: turns off rules that conflict with Prettier
  eslintConfigPrettier,
 ]
-
-// import js from '@eslint/js'
-// import globals from 'globals'
-// import { defineConfig } from 'eslint/config'
-// import prettierPlugin from 'eslint-plugin-prettier'
-// import prettierConfig from 'eslint-config-prettier'
-
-// export default defineConfig([
-//   {
-//     files: ['**/*.{js,mjs,cjs}'],
-//     plugins: {
-//       js,
-//       prettier: prettierPlugin,
-//     },
-//     extends: ['js/recommended', prettierConfig],
-//     rules: {
-//       ...prettierPlugin.configs.recommended.rules,
-//       'no-console': 'warn',
-//       eqeqeq: 'warn',
-//       curly: 'warn',
-//       'no-else-return': 'warn',
-//       'no-unused-vars': 'warn',
-//       'prettier/prettier': 'warn',
-//     },
-//   },
-//   {
-//     files: ['**/*.{js,mjs,cjs}'],
-//     languageOptions: { globals: globals.browser },
-//   },
-// ])

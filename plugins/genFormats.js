@@ -1,9 +1,9 @@
-// Створює 1x з @2x і конвертує у webp/avif для 1x і 2x
+// Generates missing 1x JPGs from @2x sources, then webp/avif for both densities
 import fs from 'fs/promises'
 import path from 'path'
 import sharp from 'sharp'
 
-const ROOT = path.resolve('src/images/background') // за потреби змінюй
+const ROOT = path.resolve('src/images/background')
 const exts = new Set(['.jpg', '.jpeg', '.png'])
 const WEBP_QUALITY = 80
 const AVIF_QUALITY = 80
@@ -27,8 +27,8 @@ async function* walk(dir) {
 
 async function makeWebpAvif(srcNoExt) {
  const pairs = [
-  { suf: '', inExts: ['.jpg', '.jpeg', '.png'] }, // 1x
-  { suf: '@2x', inExts: ['.jpg', '.jpeg', '.png'] }, // 2x
+  { suf: '', inExts: ['.jpg', '.jpeg', '.png'] },
+  { suf: '@2x', inExts: ['.jpg', '.jpeg', '.png'] },
  ]
 
  for (const { suf, inExts } of pairs) {
@@ -41,7 +41,7 @@ async function makeWebpAvif(srcNoExt) {
    )
   ).find(Boolean)
 
-  if (!input) continue // немає такого розміру — пропускаємо
+  if (!input) continue
 
   const webpOut = `${srcNoExt}${suf}.webp`
   const avifOut = `${srcNoExt}${suf}.avif`
@@ -66,14 +66,12 @@ async function makeWebpAvif(srcNoExt) {
   const ext = path.extname(file).toLowerCase()
   if (!exts.has(ext)) continue
 
-  // працюємо лише з @2x-джерелами
   const is2x = /@2x\.[^.]+$/.test(file)
   if (!is2x) continue
 
-  const base2xNoExt = file.slice(0, -ext.length) // .../name@2x
-  const baseNoExt = base2xNoExt.replace(/@2x$/, '') // .../name
+  const base2xNoExt = file.slice(0, -ext.length)
+  const baseNoExt = base2xNoExt.replace(/@2x$/, '')
 
-  // якщо 1x.jpg/png немає — створюємо з @2x (50% по ширині)
   const out1xJpg = `${baseNoExt}.jpg`
   const out1xPng = `${baseNoExt}.png`
   const has1x = (await exists(out1xJpg)) || (await exists(out1xPng))
@@ -88,7 +86,6 @@ async function makeWebpAvif(srcNoExt) {
    console.log('1x jpg:', path.relative('src', out1xJpg))
   }
 
-  // конвертуємо у webp/avif для 1x і 2x
   await makeWebpAvif(baseNoExt)
  }
 })()

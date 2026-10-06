@@ -5,7 +5,7 @@ export default {
  rules: {
   'order/properties-order': [
    {
-    // 1. Позиціювання
+    // 1. Positioning
     properties: [
      'position',
      'inset',
@@ -17,7 +17,7 @@ export default {
     ],
    },
    {
-    // 2. Блочна модель
+    // 2. Box model
     properties: [
      'display',
      'flex',
@@ -47,7 +47,7 @@ export default {
     ],
    },
    {
-    // 3. Розміри
+    // 3. Sizing
     properties: [
      'width',
      'min-width',
@@ -59,7 +59,7 @@ export default {
     ],
    },
    {
-    // 4. Відступи
+    // 4. Spacing
     properties: [
      'margin',
      'margin-top',
@@ -74,7 +74,7 @@ export default {
     ],
    },
    {
-    // 5. Типографіка
+    // 5. Typography
     properties: [
      'font',
      'font-family',
@@ -92,7 +92,7 @@ export default {
     ],
    },
    {
-    // 6. Фон, бордери, фігури
+    // 6. Background and borders
     properties: [
      'background',
      'background-color',
@@ -110,7 +110,7 @@ export default {
     ],
    },
    {
-    // 7. Ефекти
+    // 7. Effects
     properties: [
      'opacity',
      'mix-blend-mode',
@@ -124,11 +124,10 @@ export default {
     ],
    },
    {
-    // 8. Інше
+    // 8. Misc
     properties: ['content', 'pointer-events', 'user-select'],
    },
   ],
-  // 'scss/dollar-variable-pattern': '^[_]?[a-z][a-zA-Z0-9]*$',
   'selector-class-pattern':
    '^[a-z]+(?:-[a-z0-9]+)*(?:__(?:[a-z0-9]+(?:-[a-z0-9]+)*))?(?:--[a-z0-9-]+)?$',
  },

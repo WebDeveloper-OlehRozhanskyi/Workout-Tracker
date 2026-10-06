@@ -3,7 +3,7 @@ export function initWorkout() {
  try {
   saved = JSON.parse(localStorage.getItem('workouts'))
  } catch {
-  saved = null // зіпсовано → починаємо чисто
+  saved = null
  }
  const workouts = saved || []
  const exercisesList = document.querySelector('.workout__exercises-list')
@@ -38,9 +38,9 @@ export function initWorkout() {
   listSpanNote.textContent = item.note
 
   listTitle.textContent = item.name
-  listReps.textContent = `Повтори: `
-  listLoad.textContent = `Навантаження: `
-  listNote.textContent = `Коментар: `
+  listReps.textContent = `Reps: `
+  listLoad.textContent = `Load: `
+  listNote.textContent = `Note: `
 
   if (item.done) {
    listItem.classList.add('workout__exercises-item--done')
@@ -71,12 +71,12 @@ export function initWorkout() {
    emptyItem.className = 'workout__exercises-empty'
    emptyParagraph.className = 'workout__exercises-empty-text'
 
-   emptyParagraph.textContent = `Додайте своє перше заняття`
+   emptyParagraph.textContent = `Add your first exercise`
 
    emptyItem.append(emptyParagraph)
    exercisesList.append(emptyItem)
   }
-  summary.textContent = `Виконано: ${doneExercises.length} / ${totalExercises}`
+  summary.textContent = `Done: ${doneExercises.length} / ${totalExercises}`
  }
 
  function saveWorkouts() {
